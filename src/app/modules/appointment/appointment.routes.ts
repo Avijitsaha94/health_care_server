@@ -3,8 +3,8 @@ import express from 'express';
 import auth from '../../middlewares/auth';
 import { paymentLimiter } from '../../middlewares/rateLimiter';
 import validateRequest from '../../middlewares/validateRequest';
-import { AppointmentController } from './appointment.controller';
-import { AppointmentValidation } from './appointment.validation';
+import { AppointmentController } from '../appointment/appointment.controller';
+import { AppointmentValidation } from '../appointment/appointment.validation';
 
 const router = express.Router();
 

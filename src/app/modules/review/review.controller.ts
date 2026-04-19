@@ -4,8 +4,8 @@ import catchAsync from "../../../shared/catchAsync";
 import pick from "../../../shared/pick";
 import sendResponse from "../../../shared/sendResponse";
 import { IAuthUser } from "../../interfaces/common";
-import { reviewFilterableFields } from "./review.contant";
-import { ReviewService } from "./review.service";
+import { reviewFilterableFields } from "../review/review.contant";
+import { ReviewService } from "../review/review.service";
 
 const insertIntoDB = catchAsync(async (req: Request & { user?: IAuthUser }, res: Response) => {
     const user = req.user;

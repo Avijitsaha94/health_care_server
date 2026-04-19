@@ -2,8 +2,8 @@ import { UserRole } from '@prisma/client';
 import express from 'express';
 import auth from '../../middlewares/auth';
 import validateRequest from '../../middlewares/validateRequest';
-import { DoctorScheduleController } from './doctorSchedule.controller';
-import { DoctorScheduleValidation } from './doctorSchedule.validation';
+import { DoctorScheduleController } from '../doctorSchedule/doctorSchedule.controller';
+import { DoctorScheduleValidation } from '../doctorSchedule/doctorSchedule.validation';
 
 const router = express.Router();
 

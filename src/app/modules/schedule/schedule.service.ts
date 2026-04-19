@@ -4,7 +4,7 @@ import { paginationHelper } from '../../../helpers/paginationHelper';
 import prisma from '../../../shared/prisma';
 import { IAuthUser } from '../../interfaces/common';
 import { IPaginationOptions } from '../../interfaces/pagination';
-import { IFilterRequest, ISchedule } from './schedule.interface';
+import { IFilterRequest, ISchedule } from '../schedule/schedule.interface';
 
 const convertDateTime = async (date: Date) => {
     const offset = date.getTimezoneOffset() * 60000;

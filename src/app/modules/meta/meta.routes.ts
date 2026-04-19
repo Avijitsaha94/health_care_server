@@ -1,5 +1,5 @@
 import express from 'express';
-import { MetaController } from './meta.controller';
+import { MetaController } from '../meta/meta.controller';
 import auth from '../../middlewares/auth';
 import { UserRole } from '@prisma/client';
 

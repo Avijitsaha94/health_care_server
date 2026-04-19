@@ -1,9 +1,9 @@
 import express from 'express'
-import { DoctorController } from './doctor.controller';
+import { DoctorController } from '../doctor/doctor.controller';
 import auth from '../../middlewares/auth';
 import { UserRole } from '@prisma/client';
 import validateRequest from '../../middlewares/validateRequest';
-import { DoctorValidation } from './doctor.validation';
+import { DoctorValidation } from '../doctor/doctor.validation';
 
 const router = express.Router();
 

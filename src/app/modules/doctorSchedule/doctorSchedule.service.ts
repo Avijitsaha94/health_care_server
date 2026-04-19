@@ -5,7 +5,7 @@ import { IAuthUser } from "../../interfaces/common";
 import { IPaginationOptions } from "../../interfaces/pagination";
 import ApiError from "../../errors/ApiError";
 import httpStatus from "http-status";
-import { IDoctorScheduleFilterRequest } from "./doctorSchedule.interface";
+import { IDoctorScheduleFilterRequest } from "../doctorSchedule/doctorSchedule.interface";
 
 const insertIntoDB = async (user: any, payload: {
     scheduleIds: string[]

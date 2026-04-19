@@ -2,8 +2,8 @@ import { Patient, Prisma, UserStatus } from '@prisma/client';
 import { paginationHelper } from '../../../helpers/paginationHelper';
 import prisma from '../../../shared/prisma';
 import { IPaginationOptions } from '../../interfaces/pagination';
-import { patientSearchableFields } from './patient.constants';
-import { IPatientFilterRequest, IPatientUpdate } from './patient.interface';
+import { patientSearchableFields } from '../patient/patient.constants';
+import { IPatientFilterRequest, IPatientUpdate } from '../patient/patient.interface';
 
 const getAllFromDB = async (
   filters: IPatientFilterRequest,

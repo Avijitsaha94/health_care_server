@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import catchAsync from "../../../shared/catchAsync";
-import { MetaService } from "./meta.service";
+import { MetaService } from "../meta/meta.service";
 import sendResponse from "../../../shared/sendResponse";
 import httpStatus from "http-status";
 import { IAuthUser } from "../../interfaces/common";

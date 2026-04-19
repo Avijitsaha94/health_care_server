@@ -3,7 +3,7 @@ import httpStatus from "http-status";
 import config from "../../../config";
 import catchAsync from "../../../shared/catchAsync";
 import sendResponse from "../../../shared/sendResponse";
-import { AuthServices } from "./auth.service";
+import { AuthServices } from "../auth/auth.service";
 
 const loginUser = catchAsync(async (req: Request, res: Response) => {
   const accessTokenExpiresIn = config.jwt.expires_in as string;
