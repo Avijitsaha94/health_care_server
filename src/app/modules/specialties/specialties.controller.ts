@@ -30,7 +30,7 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
 
 const deleteFromDB = catchAsync(async (req: Request, res: Response) => {
     const { id } = req.params;
-    const result = await SpecialtiesService.deleteFromDB(id);
+    const result = await SpecialtiesService.deleteFromDB(id as string);
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,

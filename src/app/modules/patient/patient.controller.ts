@@ -24,7 +24,7 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
 const getByIdFromDB = catchAsync(async (req: Request, res: Response) => {
 
   const { id } = req.params;
-  const result = await PatientService.getByIdFromDB(id);
+  const result = await PatientService.getByIdFromDB(id as string);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -36,7 +36,7 @@ const getByIdFromDB = catchAsync(async (req: Request, res: Response) => {
 
 const updateIntoDB = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
-  const result = await PatientService.updateIntoDB(id, req.body);
+  const result = await PatientService.updateIntoDB(id as string, req.body);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -48,7 +48,7 @@ const updateIntoDB = catchAsync(async (req: Request, res: Response) => {
 
 const deleteFromDB = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
-  const result = await PatientService.deleteFromDB(id);
+  const result = await PatientService.deleteFromDB(id as string);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -60,7 +60,7 @@ const deleteFromDB = catchAsync(async (req: Request, res: Response) => {
 
 const softDelete = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
-  const result = await PatientService.softDelete(id);
+  const result = await PatientService.softDelete(id as string);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,

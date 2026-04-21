@@ -4,7 +4,7 @@ import catchAsync from "../../../shared/catchAsync";
 import pick from "../../../shared/pick";
 import sendResponse from "../../../shared/sendResponse";
 import { IAuthUser } from "../../interfaces/common";
-import { ScheduleService } from "./schedule.service";
+import { ScheduleService } from "../schedule/schedule.service";
 
 const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
     const result = await ScheduleService.inserIntoDB(req.body);
@@ -35,7 +35,7 @@ const getAllFromDB = catchAsync(async (req: Request & { user?: IAuthUser }, res:
 
 const getByIdFromDB = catchAsync(async (req: Request, res: Response) => {
     const { id } = req.params;
-    const result = await ScheduleService.getByIdFromDB(id);
+    const result = await ScheduleService.getByIdFromDB(id as string);
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,
@@ -46,7 +46,7 @@ const getByIdFromDB = catchAsync(async (req: Request, res: Response) => {
 
 const deleteFromDB = catchAsync(async (req: Request, res: Response) => {
     const { id } = req.params;
-    const result = await ScheduleService.deleteFromDB(id);
+    const result = await ScheduleService.deleteFromDB(id as string);
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,

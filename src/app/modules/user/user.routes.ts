@@ -3,8 +3,8 @@ import express, { NextFunction, Request, Response } from 'express';
 import { fileUploader } from '../../../helpers/fileUploader';
 import auth from '../../middlewares/auth';
 import validateRequest from '../../middlewares/validateRequest';
-import { userController } from './user.controller';
-import { userValidation } from './user.validation';
+import { userController } from '../user/user.controller';
+import { userValidation } from '../user/user.validation';
 
 const router = express.Router();
 

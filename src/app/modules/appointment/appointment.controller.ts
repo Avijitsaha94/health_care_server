@@ -55,7 +55,7 @@ const changeAppointmentStatus = catchAsync(async (req: Request & { user?: IAuthU
     const { status } = req.body;
     const user = req.user;
 
-    const result = await AppointmentService.updateAppointmentStatus(id, status, user as IAuthUser);
+    const result = await AppointmentService.updateAppointmentStatus(id as string, status, user as IAuthUser);
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,
@@ -81,7 +81,7 @@ const initiatePayment = catchAsync(async (req: Request & { user?: IAuthUser }, r
     const user = req.user;
     const { id } = req.params;
 
-    const result = await AppointmentService.initiatePaymentForAppointment(id, user as IAuthUser);
+    const result = await AppointmentService.initiatePaymentForAppointment(id as string, user as IAuthUser);
 
     sendResponse(res, {
         statusCode: httpStatus.OK,

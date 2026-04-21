@@ -1,12 +1,13 @@
 import { Request, Response } from "express";
-import { userService } from "./user.service";
+import { userService } from "../user/user.service";
 import catchAsync from "../../../shared/catchAsync";
 import sendResponse from "../../../shared/sendResponse";
 import httpStatus from "http-status";
 import pick from "../../../shared/pick";
-import { userFilterableFields } from "./user.constant";
+import { userFilterableFields } from "../user/user.constant";
 
 import { IAuthUser } from "../../interfaces/common";
+import { string } from "zod";
 
 const createAdmin = catchAsync(async (req: Request, res: Response) => {
 
@@ -59,7 +60,7 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
 const changeProfileStatus = catchAsync(async (req: Request, res: Response) => {
 
     const { id } = req.params;
-    const result = await userService.changeProfileStatus(id, req.body)
+    const result = await userService.changeProfileStatus(id as string, req.body)
 
     sendResponse(res, {
         statusCode: httpStatus.OK,
